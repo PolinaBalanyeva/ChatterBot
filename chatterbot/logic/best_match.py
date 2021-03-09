@@ -51,6 +51,7 @@ class BestMatch(LogicAdapter):
             ))
 
         response_selection_parameters = {
+            'persona_not_startswith': 'bot:'
             'in_response_to': closest_match.text,
 #             'search_in_response_to': closest_match.search_text,
             'exclude_text': recent_repeated_responses,
