@@ -51,15 +51,19 @@ class BestMatch(LogicAdapter):
             ))
 
         response_selection_parameters = {
-            'search_in_response_to': closest_match.search_text,
+            'in_response_to': closest_match.search_text,
+#             'search_in_response_to': closest_match.search_text,
             'exclude_text': recent_repeated_responses,
             'exclude_text_words': self.excluded_words
         }
 
         alternate_response_selection_parameters = {
-            'search_in_response_to': self.chatbot.storage.tagger.get_text_index_string(
+            'in_response_to': self.chatbot.storage.tagger.get_text_index_string(
                 input_statement.text
             ),
+#             'search_in_response_to': self.chatbot.storage.tagger.get_text_index_string(
+#                 input_statement.text
+#             ),
             'exclude_text': recent_repeated_responses,
             'exclude_text_words': self.excluded_words
         }
